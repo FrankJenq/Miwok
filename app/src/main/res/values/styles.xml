@@ -37,4 +37,10 @@
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginTop">16dp</item>
     </style>
+
+    <style name="TabStyle">
+        <item name="tabIndicatorColor">#FFF</item>
+        <item name="tabSelectedTextColor">#FFF</item>
+        <item name="android:background">#4A312A</item>
+    </style>
 </resources>

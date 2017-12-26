@@ -6,49 +6,38 @@ package com.example.android.miwok;
 
 public class Word {
     // String value
-    private String miwokWord;
 
-    private String defaultWord;
+    private int mVoiceId;
 
-    // Text color
-    private int mMiwokColor;
-    private int mDefaultColor;
+    private String mMiwokWord;
+
+    private String mDefaultWord;
+
+    private int mImageResourceId = NO_IMAGE;
+
+    private static final int NO_IMAGE = -1;
 
     /**
-     * Constructs a new TextView with initial values for text and text color.
+     * Constructs a new object with two Texts.
      */
-    public Word(String defaultText,String miwokText) {
-        defaultWord = defaultText;
-        miwokWord = miwokText;
-        mMiwokColor = 0;
-        mDefaultColor = 0;
+    public Word(int voiceId, String defaultText, String miwokText) {
+        mVoiceId = voiceId;
+        mDefaultWord = defaultText;
+        mMiwokWord = miwokText;
     }
 
     /**
-     * Sets the text color of miwokWord text.
-     *
-     * @param color of text to be displayed.
+     * Constructs a new object with two Texts and one ImageViewId.
      */
-    public void setMiwokColor(int color) {
-        mMiwokColor = color;
+    public Word(int voiceId, String defaultText, String miwokText, int imageId) {
+        mVoiceId = voiceId;
+        mDefaultWord = defaultText;
+        mMiwokWord = miwokText;
+        mImageResourceId = imageId;
     }
 
-    /**
-     * Sets the text color of the defaultWord text.
-     *
-     * @param color of text to be displayed.
-     */
-    public void setDefaultColor(int color) {
-        mDefaultColor = color;
-    }
-
-    /**
-     * Gets the string value of defaultWord.
-     *
-     * @return current text of defaultWord.
-     */
     public String getDefaultWord() {
-        return defaultWord;
+        return mDefaultWord;
     }
 
     /**
@@ -57,6 +46,25 @@ public class Word {
      * @return current text of miwokWord.
      */
     public String getMiwokWord() {
-        return miwokWord;
+        return mMiwokWord;
+    }
+
+    /**
+     * Gets the ID of the picture.
+     */
+    public int getImageResourceId() {
+        return mImageResourceId;
+    }
+
+    /**
+     * @return the ID of the pronunciation voice.
+     */
+    public int getVoiceId(){return mVoiceId;}
+
+    /**
+     * @return whether there is a valid image.
+     */
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE;
     }
 }
